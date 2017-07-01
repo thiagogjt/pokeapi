@@ -21,13 +21,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * Test class for the PokemonResource REST controller.
+ * Test class for the AbilityResource REST controller.
  *
- * @see PokemonResource
+ * @see AbilityResource
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PokeapiApp.class)
-public class PokemonResourceIntTest {
+public class AbilityResourceIntTest {
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -41,52 +41,52 @@ public class PokemonResourceIntTest {
     @Autowired
     private PokeApi api;
 
-    private MockMvc restPokemonMockMvc;
+    private MockMvc restAbilityMockMvc;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        PokemonResource pokemonResource = new PokemonResource(api);
-        this.restPokemonMockMvc = MockMvcBuilders.standaloneSetup(pokemonResource)
+        AbilityResource abilityResource = new AbilityResource(api);
+        this.restAbilityMockMvc = MockMvcBuilders.standaloneSetup(abilityResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setMessageConverters(jacksonMessageConverter).build();
     }
 
     @Test
-    public void getAllPokemons() throws Exception {
-        // Get all the pokemonList
-        restPokemonMockMvc.perform(get("/api/pokemons?sort=id,desc"))
+    public void getAllAbiliies() throws Exception {
+        // Get all the abilityList
+        restAbilityMockMvc.perform(get("/api/abilities?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(1)))
-            .andExpect(jsonPath("$.[*].name").value(hasItem("bulbasaur")));
+            .andExpect(jsonPath("$.[*].name").value(hasItem("stench")));
     }
 
     @Test
-    public void getPokemonById() throws Exception {
-        // Get the Pokemon
-        restPokemonMockMvc.perform(get("/api/pokemons/{id}", 2))
+    public void getAbilityById() throws Exception {
+        // Get the Ability
+        restAbilityMockMvc.perform(get("/api/abilities/{id}", 2))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(2))
-            .andExpect(jsonPath("$.name").value("ivysaur"));
+            .andExpect(jsonPath("$.name").value("drizzle"));
     }
 
     @Test
-    public void getPokemonByName() throws Exception {
-        // Get the Pokemon
-        restPokemonMockMvc.perform(get("/api/pokemons/{id}", "ivysaur"))
+    public void getAbilityByName() throws Exception {
+        // Get the Ability
+        restAbilityMockMvc.perform(get("/api/abilities/{id}", "drizzle"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(2))
-            .andExpect(jsonPath("$.name").value("ivysaur"));
+            .andExpect(jsonPath("$.name").value("drizzle"));
     }
 
     @Test
-    public void getNonExistingPokemon() throws Exception {
-        // Get the Pokemon
-        restPokemonMockMvc.perform(get("/api/pokemons/{id}", Long.MAX_VALUE))
+    public void getNonExistingAbility() throws Exception {
+        // Get the Ability
+        restAbilityMockMvc.perform(get("/api/abilities/{id}", Long.MAX_VALUE))
             .andExpect(status().isNotFound());
     }
 
