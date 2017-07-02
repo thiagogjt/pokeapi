@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "teamPokemon",
+            "otherEntityName": "teamPokemon",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "abilityId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abilityName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170701205538",
+    "entityTableName": "team_pokemon_ability",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

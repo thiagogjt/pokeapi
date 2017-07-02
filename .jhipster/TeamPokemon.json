@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "team",
+            "otherEntityName": "team",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "abilities",
+            "otherEntityName": "teamPokemonAbility",
+            "otherEntityRelationshipName": "teamPokemon"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pokemonId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pokemonName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170701205537",
+    "entityTableName": "team_pokemon",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

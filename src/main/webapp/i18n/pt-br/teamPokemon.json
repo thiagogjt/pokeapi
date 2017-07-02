@@ -1,0 +1,24 @@
+{
+    "pokeapiApp": {
+        "teamPokemon" : {
+            "home": {
+                "title": "Team Pokemons",
+                "createLabel": "Criar novo Team Pokemon",
+                "createOrEditLabel": "Criar ou editar Team Pokemon"
+            },
+            "created": "Um novo Team Pokemon foi criado com o identificador {{ param }}",
+            "updated": "Um Team Pokemon foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Team Pokemon foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Team Pokemon {{ id }}?"
+            },
+            "detail": {
+                "title": "Team Pokemon"
+            },
+            "pokemonId": "Pokemon Id",
+            "pokemonName": "Pokemon Name",
+            "team": "Team",
+            "abilities": "Abilities"
+        }
+    }
+}

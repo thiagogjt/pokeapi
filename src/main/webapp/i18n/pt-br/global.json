@@ -7,6 +7,9 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "team": "Time",
+                "teamPokemon": "Team Pokemon",
+                "teamPokemonAbility": "Team Pokemon Abilities",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -83,8 +86,10 @@
         "action": {
             "addblob": "Adicionar blob",
             "addimage": "Adicionar imagem",
+            "add": "Adicionar",
             "back": "Voltar",
             "cancel": "Cancelar",
+            "confirm": "Confirmar",
             "delete": "Excluir",
             "edit": "Editar",
             "open": "Open",

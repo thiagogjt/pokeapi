@@ -1,0 +1,23 @@
+{
+    "pokeapiApp": {
+        "teamPokemonAbility" : {
+            "home": {
+                "title": "Team Pokemon Abilities",
+                "createLabel": "Criar novo Team Pokemon Abilities",
+                "createOrEditLabel": "Criar ou editar Team Pokemon Abilities"
+            },
+            "created": "Um novo Team Pokemon Abilities foi criado com o identificador {{ param }}",
+            "updated": "Um Team Pokemon Abilities foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Team Pokemon Abilities foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Team Pokemon Abilities {{ id }}?"
+            },
+            "detail": {
+                "title": "Team Pokemon Abilities"
+            },
+            "abilityId": "Ability Id",
+            "abilityName": "Ability Name",
+            "teamPokemon": "Team Pokemon"
+        }
+    }
+}

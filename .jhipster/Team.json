@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pokemons",
+            "otherEntityName": "teamPokemon",
+            "otherEntityRelationshipName": "team"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170701205536",
+    "entityTableName": "team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

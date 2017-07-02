@@ -1,0 +1,33 @@
+{
+    "pokeapiApp": {
+        "team" : {
+            "home": {
+                "title": "Times",
+                "createLabel": "Criar novo Time",
+                "createOrEditLabel": "Criar ou editar Time"
+            },
+            "created": "Um novo Time foi criado com o identificador {{ param }}",
+            "updated": "Um Time foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Time foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Time {{ id }}?"
+            },
+            "detail": {
+                "title": "Time"
+            },
+            "name": "Nome",
+            "pokemon": {
+                "title": "Pokemons",
+                "search": "Procurar Pokemon"
+            },
+            "ability": {
+                "title": "Habilidades",
+                "search": "Procurar Habilidade",
+                "validation": {
+                    "max": "Cada pokemon pode ter no máximo 4 habilidades."
+                }
+            },
+            "user": "Treinador"
+        }
+    }
+}
