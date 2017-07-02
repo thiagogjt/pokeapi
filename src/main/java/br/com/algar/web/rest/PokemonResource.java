@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiParam;
 import me.sargunvohra.lib.pokekotlin.client.ErrorResponse;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.model.NamedApiResource;
+import me.sargunvohra.lib.pokekotlin.model.NamedApiResourceList;
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +49,8 @@ public class PokemonResource {
     @Timed
     public ResponseEntity<List<NamedApiResource>> getAllPokemons(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of Pokemons");
-        Page<NamedApiResource> page = new PageImpl<>(api.getPokemonList(pageable.getOffset(), pageable.getPageSize()).getResults()) ;
+        NamedApiResourceList pokemonList = api.getPokemonList(pageable.getOffset(), pageable.getPageSize());
+        Page<NamedApiResource> page = new PageImpl<>(pokemonList.getResults(), pageable, pokemonList.getCount()) ;
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/pokemons");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

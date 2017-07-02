@@ -8,6 +8,7 @@ import me.sargunvohra.lib.pokekotlin.client.ErrorResponse;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.model.Ability;
 import me.sargunvohra.lib.pokekotlin.model.NamedApiResource;
+import me.sargunvohra.lib.pokekotlin.model.NamedApiResourceList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -48,7 +49,8 @@ public class AbilityResource {
     @Timed
     public ResponseEntity<List<NamedApiResource>> getAllAbilities(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of Ability");
-        Page<NamedApiResource> page = new PageImpl<>(api.getAbilityList(pageable.getOffset(), pageable.getPageSize()).getResults());
+        NamedApiResourceList abilityList = api.getAbilityList(pageable.getOffset(), pageable.getPageSize());
+        Page<NamedApiResource> page = new PageImpl<>(abilityList.getResults(), pageable, abilityList.getCount()) ;
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/abilities");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
