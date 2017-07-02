@@ -1,0 +1,46 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTeamLabel" data-translate="pokeapiApp.team.home.createOrEditLabel">Create or edit
+            a Team</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert></jhi-alert>
+        <div class="form-group" ng-show="vm.team.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   ng-model="vm.team.id" readonly/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pokeapiApp.team.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name" required ng-model="vm.team.name"/>
+        </div>
+
+        <div class="row">
+            <hr/>
+            <div class="col-md-10">
+                <h4 class="modal-title" id="myTeamPokemonLabel" data-translate="pokeapiApp.team.pokemon.title">Pokemons</h4>
+            </div>
+            <div class="col-md-2 text-right">
+                <button type="button" class="btn btn-default" ng-click="vm.addPokemon()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <pokemon-panel ng-repeat="pokemon in vm.team.pokemons" pokemon="pokemon" remove="vm.removePokemon($index)" ng-disabled="vm.isRemoving"></pokemon-panel>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
