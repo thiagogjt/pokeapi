@@ -1,0 +1,37 @@
+<div class="col-sm-6 col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            #{{vm.pokemon.pokemonId}} {{vm.pokemon.pokemonName | capitalize}}
+            <span class="pull-right">
+                <span class="btn btn-xs btn-danger" ng-click="vm.remove()">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </span>
+            </span>
+        </div>
+        <div class="panel-body">
+            <p class="text-center">
+                <img ng-src="/content/images/pokemon/sprites/{{vm.pokemon.pokemonId}}.png" alt="{{vm.pokemon.pokemonName}}">
+            </p>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item disabled clearfix">
+                Habilidades
+                <span class="pull-right">
+                    <span class="btn btn-xs btn-default" ng-click="vm.addAbility()">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </span>
+                </span>
+            </li>
+            <li class="list-group-item" ng-repeat="ability in vm.pokemon.abilities">
+                #{{ability.abilityId}} {{ability.abilityName | capitalize}}
+                <span class="pull-right">
+                    <span class="btn btn-xs btn-danger" ng-click="vm.removeAbility($index)" ng-disabled="vm.isRemoving">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </span>
+                </span>
+            </li>
+
+        </ul>
+    </div>
+</div>

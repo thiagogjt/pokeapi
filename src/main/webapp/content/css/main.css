@@ -339,3 +339,7 @@ ui bootstrap tweaks
 
 
 /* jhipster-needle-css-add-main JHipster will add new css style */
+.pokemon-list {
+    max-height: 500px;
+    overflow-y: scroll;
+}

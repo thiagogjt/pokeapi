@@ -1,0 +1,43 @@
+<form name="deleteForm" ng-submit="vm.confirmDelete(vm.team.id)">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" data-translate="pokeapiApp.team.pokemon.search">Search Pokemon</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="idOrName" placeholder="Digite o Identificador ou nome completo para buscar...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="vm.find(idOrName)">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="list-group pokemon-list" >
+                <a href="javascript:void(0)" class="list-group-item" ng-repeat="pokemon in vm.pokemons track by pokemon.id">
+                    <img ng-src="/content/images/pokemon/icons/{{pokemon.id}}.png" alt="{{pokemon.name}}">
+                    #{{pokemon.id}} {{pokemon.name | capitalize}}
+                    <span class="pull-right">
+                        <span class="btn btn-xs btn-default" ng-click="vm.select(pokemon)">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+            <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.loadAll()"></uib-pagination>
+        </div>
+
+    </div>
+</form>
