@@ -1,5 +1,6 @@
 package br.com.algar.config;
 
+import br.com.algar.domain.TeamPokemonAbility;
 import io.github.jhipster.config.JHipsterProperties;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
@@ -40,6 +41,11 @@ public class CacheConfiguration {
             cm.createCache(br.com.algar.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.algar.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.algar.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.com.algar.domain.Team.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.algar.domain.Team.class.getName() + ".pokemons", jcacheConfiguration);
+            cm.createCache(br.com.algar.domain.TeamPokemon.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.algar.domain.TeamPokemon.class.getName() + ".abilities", jcacheConfiguration);
+            cm.createCache(TeamPokemonAbility.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
