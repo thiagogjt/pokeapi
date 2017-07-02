@@ -1,101 +1,57 @@
 # pokeapi
-This application was generated using JHipster 4.5.6, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.6](https://jhipster.github.io/documentation-archive/v4.5.6).
 
-## Development
+## Desenvolvimento
 
-Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1. [Node.js][]: We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+Antes que você possa construir este projeto, você deve instalar e configurar os seguintes dependências em sua máquina:
 
-After installing Node, you should be able to run the following command to install development tools.
-You will only need to run this command when dependencies change in [package.json](package.json).
+1. [Node.js][]: Node é usado para executar um servidor web desenvolvimento e construir o projeto.
+                    Dependendo do seu sistema, você pode instalar o Node a partir do fonte ou como um pacote pré-embalados. 
+
+Depois de instalar o Node, você deve ser capaz de executar o seguinte comando para instalar as ferramentas de desenvolvimento.
+Você só precisará executar este comando quando dependências mudarem no [package.json] (package.json).
 
     npm install
 
-We use [Gulp][] as our build system. Install the Gulp command-line tool globally with:
+O [Gulp] [] é usado como nosso sistema de compilação. Gulp instalar a ferramenta de linha de comando do Gulp globalmente globalmente com:
 
     npm install -g gulp-cli
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
+Execute os seguintes comandos em dois terminais separados para criar uma experiência de desenvolvimento bem-aventurada, onde seu navegador
+recarrega a página quando os arquivos são alterados no seu disco rígido.
 
     ./mvnw
     gulp
 
-[Bower][] is used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [bower.json](bower.json). You can also run `bower update` and `bower install` to manage dependencies.
-Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
+[Bower] [] é usado para gerenciar dependências de CSS e JavaScript utilizados nesta aplicação. Você pode atualizar as dependências 
+especificando uma versão mais recente em [bower.json](bower.json). Você também pode executar `bower update` e `bower install` para gerenciar as dependências. 
+Adicionar o flag `-h` em qualquer comando para ver como você pode usá-lo. Por exemplo, , `bower update -h`.
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+## Construindo para a produção
 
-
-## Building for production
-
-To optimize the pokeapi application for production, run:
+Para otimizar a aplicação pokeapi para a produção, execute
 
     ./mvnw -Pprod clean package
 
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
+Isto irá concatenar e "minificar" os arquivos CSS e JavaScript. Ele também irá modificar `index.html` para que ele referencie os novos arquivos.
+Para garantir que tudo funcionou, execute:
 
     java -jar target/*.war
 
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+Então acesse o endereço [http://localhost:8080](http://localhost:8080) no seu navegador.
 
-Refer to [Using JHipster in production][] for more details.
+## Testando
 
-## Testing
-
-To launch your application's tests, run:
+Para executar os testes da aplicação execute:
 
     ./mvnw clean test
 
-### Client tests
+### Teste do Cliente
 
-Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
+Testes no cliente são executados pelo [Karma][] e escritos com o [Jasmine][].
+Eles estão localizados em [src/test/javascript/](src/test/javascript/) e podem ser executados com o comando: 
 
     gulp test
-
-
-
-For more information, refer to the [Running tests page][].
-
-## Using Docker to simplify development (optional)
-
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
-For example, to start a mysql database in a docker container, run:
-
-    docker-compose -f src/main/docker/mysql.yml up -d
-
-To stop it and remove the container, run:
-
-    docker-compose -f src/main/docker/mysql.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./mvnw package -Pprod docker:build
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: https://jhipster.github.io
-[JHipster 4.5.6 archive]: https://jhipster.github.io/documentation-archive/v4.5.6
-
-[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v4.5.6/development/
-[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v4.5.6/docker-compose
-[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v4.5.6/production/
-[Running tests page]: https://jhipster.github.io/documentation-archive/v4.5.6/running-tests/
-[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v4.5.6/setting-up-ci/
-
 
 [Node.js]: https://nodejs.org/
 [Yarn]: https://yarnpkg.org/
